@@ -8,12 +8,14 @@ const Header = ({ title, linkHref, linkTitle }) => {
       p-4"
     >
       <h1 className="text-2xl font-bold">{title}</h1>
-      <Link
-        href={linkHref}
-        className="md:text-xl text-sm underline hover:text-blue-600 hover:transition-all cursor-pointer"
-      >
-        {linkTitle}
-      </Link>
+      {linkHref && linkTitle ? (
+        <Link
+          href={linkHref}
+          className="md:text-xl text-sm underline hover:text-blue-600 hover:transition-all cursor-pointer"
+        >
+          {linkTitle}
+        </Link>
+      ) : null}
     </div>
   );
 };

@@ -7,15 +7,11 @@ const InputSearch = () => {
   const searchRef = useRef();
   const router = useRouter();
 
-  const handleSearch = () => {
-    const keyword = searchRef.current.value;
-    router.push(`/search/${keyword}`);
-  };
-
-  const handlePress = (e) => {
+  const handleSearch = (e) => {
     e.preventDefault();
-    if (e.key === "Enter") {
-      handleSearch();
+    if (e.key === "Enter" || e.type === "click") {
+      const keyword = searchRef.current.value;
+      router.push(`/search/${keyword}`);
     }
   };
 
@@ -25,7 +21,7 @@ const InputSearch = () => {
         placeholder="Search Anime"
         className="p-2 rounded-lg w-full"
         ref={searchRef}
-        onKeyUp={handlePress}
+        onKeyUp={handleSearch}
       />
       <button className="absolute top-2 end-2" onClick={handleSearch}>
         <BsSearch size={24} />

@@ -7,11 +7,11 @@ const Header = ({ title, linkHref, linkTitle }) => {
       className="flex justify-between items-center
       p-4"
     >
-      <h1 className="text-2xl font-bold">{title}</h1>
+      <h1 className="text-2xl font-bold text-secondary">{title}</h1>
       {linkHref && linkTitle ? (
         <Link
           href={linkHref}
-          className="md:text-xl text-sm underline hover:text-blue-600 hover:transition-all cursor-pointer"
+          className="md:text-xl text-sm underline hover:text-primary hover:transition-all cursor-pointer text-secondary"
         >
           {linkTitle}
         </Link>

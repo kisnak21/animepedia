@@ -9,7 +9,7 @@ const AnimeList = ({ api }) => {
         return (
           <Link
             href={`/${anime.mal_id}`}
-            className="cursor-pointer"
+            className="cursor-pointer hover:text-primary text-secondary transition-all"
             key={anime.mal_id}
           >
             <Image
@@ -19,9 +19,7 @@ const AnimeList = ({ api }) => {
               alt={anime.title}
               className="w-full max-h-64 object-cover"
             />
-            <h3 className="font-bold md:text-xl text-md p-4  ">
-              {anime.title}
-            </h3>
+            <h3 className="font-bold md:text-xl text-md p-4 ">{anime.title}</h3>
           </Link>
         );
       })}

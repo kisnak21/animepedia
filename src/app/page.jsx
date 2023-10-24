@@ -1,6 +1,5 @@
 import AnimeList from "@/components/AnimeList";
 import Header from "@/components/Header";
-import Link from "next/link";
 import React from "react";
 
 const Home = async () => {

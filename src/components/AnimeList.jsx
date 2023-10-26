@@ -8,7 +8,7 @@ const AnimeList = ({ api }) => {
       {api.data?.map((anime) => {
         return (
           <Link
-            href={`/${anime.mal_id}`}
+            href={`/anime/${anime.mal_id}`}
             className="cursor-pointer hover:text-primary text-secondary transition-all"
             key={anime.mal_id}
           >
@@ -16,7 +16,7 @@ const AnimeList = ({ api }) => {
               src={anime.images.webp.large_image_url}
               width={350}
               height={350}
-              alt={anime.title}
+              alt={anime.images.jpg.large_image_url}
               className="w-full max-h-64 object-cover"
             />
             <h3 className="font-bold md:text-xl text-md p-4">{anime.title}</h3>

@@ -1,12 +1,10 @@
+import React from "react";
 import AnimeList from "@/components/AnimeList";
 import Header from "@/components/Header";
-import React from "react";
+import { getAnimeRes } from "@/utils/api";
 
-const Home = async () => {
-  const response = await fetch(
-    `${process.env.NEXT_PUBLIC_API_BASE_URL}/top/anime?limit=10`
-  );
-  const topAnime = await response.json();
+const Page = async () => {
+  const topAnime = await getAnimeRes("top/anime", "limit=10");
 
   return (
     <>
@@ -18,4 +16,4 @@ const Home = async () => {
   );
 };
 
-export default Home;
+export default Page;

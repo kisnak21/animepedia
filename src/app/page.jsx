@@ -11,7 +11,7 @@ const Page = async () => {
       <section>
         <Header
           title="Most Popular Anime"
-          linkHref="/popular"
+          linkHref="/anime/popular"
           linkTitle="See more"
         />
         <AnimeList api={topAnime} />

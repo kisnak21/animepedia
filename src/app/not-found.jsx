@@ -22,7 +22,7 @@ const NotfoundPage = () => {
           </Link>
           <Link
             className="underline text-blue-600 hover:text-red-500 duration-300"
-            href="/popular"
+            href="/anime/popular"
           >
             Popular Anime
           </Link>

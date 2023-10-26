@@ -12,6 +12,9 @@ const Navbar = () => {
         <nav>
           <ul className="flex space-x-4 text-secondary text-lg">
             <li className="hover:text-dark transition-all">
+              <Link href="/">Anime</Link>
+            </li>
+            <li className="hover:text-dark transition-all">
               <Link href="/manga">Manga</Link>
             </li>
             <li className="hover:text-dark transition-all">

@@ -1,17 +1,18 @@
+import TrailerAnime from "@/components/TrailerAnime";
 import { getAnimeRes } from "@/utils/api";
 import Image from "next/image";
 import React from "react";
 
 const Page = async ({ params: { id } }) => {
   const { data } = await getAnimeRes(`anime/${id}`);
-  console.log(data);
+
   return (
     <>
       <div className="pt-4 px-4 text-secondary">
         <h3 className="text-2xl font-semibold">
           {data.title} - {data.year}
         </h3>
-        <div className="pt-4 px-4 text-secondary gap-2 flex overflow-auto">
+        <div className="pt-4 px-4 text-secondary gap-2 flex overflow-x-auto">
           <div className="w-36 border border-secondary rounded flex flex-col justify-center items-center p-2">
             <h3 className="font-semibold bg-[#2E51A2] rounded-lg p-2">Score</h3>
             <p className="text-2xl font-bold">{data.score}</p>
@@ -47,6 +48,9 @@ const Page = async ({ params: { id } }) => {
           />
           <p className="text-justify text-lg">{data.synopsis}</p>
         </div>
+      </div>
+      <div>
+        <TrailerAnime youtubeId={data.trailer.youtube_id} />
       </div>
     </>
   );

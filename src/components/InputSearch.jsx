@@ -21,8 +21,8 @@ const InputSearch = () => {
   return (
     <div className="relative">
       <input
-        placeholder="Search Anime"
-        className="p-2 rounded-lg w-full"
+        placeholder="Search Anime & Manga"
+        className="p-2 rounded-lg w-full placeholder:text-sm"
         ref={searchRef}
         onKeyUp={handleSearch}
       />

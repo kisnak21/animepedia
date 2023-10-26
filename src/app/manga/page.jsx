@@ -1,20 +1,21 @@
 import React from "react";
 import AnimeList from "@/components/AnimeList";
 import Header from "@/components/Header";
-import { getAnimeRes } from "@/utils/api";
+import { getAnimeRes, getMangaRes } from "@/utils/api";
+import MangaList from "@/components/MangaList";
 
 const Page = async () => {
-  const topAnime = await getAnimeRes("top/anime", "limit=10");
+  const topManga = await getMangaRes("top/manga", "limit=10");
 
   return (
     <div className="gap-4">
       <section>
         <Header
-          title="Most Popular Anime"
-          linkHref="/popular"
+          title="Most Popular Manga"
+          linkHref="/manga/popular"
           linkTitle="See more"
         />
-        <AnimeList api={topAnime} />
+        <MangaList api={topManga} />
       </section>
     </div>
   );

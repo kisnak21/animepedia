@@ -34,7 +34,12 @@ const Page = async ({ params: { id } }) => {
             <p className="capitalize ">
               {data.season} {data.year}
             </p>
-            |<p>{data.type}</p>|<p>{data.studios[0].name}</p>
+            |<p>{data.type}</p>|
+            {data.studios.map((studio) => (
+              <p key={studio.name} className="text-lg font-bold">
+                {studio.name}
+              </p>
+            ))}
           </div>
         </div>
 

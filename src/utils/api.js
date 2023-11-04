@@ -12,5 +12,15 @@ export const getMangaRes = async (resource, query) => {
 
 export const getNestedRes = async (resource, objectProperty) => {
     const response = await getAnimeRes(resource)
-    return response.data.flatMap(item => item.entry)
+    return response.data.flatMap(item => item[objectProperty])
+}
+
+export const getRandomAnime = (data, gap) => {
+    const first = ~~(Math.random() * (data.length - gap) + 1)
+    const last = first + gap
+    
+    const response = {
+        data: data.slice(first, last)
+    }
+    return response
 }
